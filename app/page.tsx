@@ -163,13 +163,13 @@ export default function PortfolioHome() {
 
                     <div className="mt-8 flex flex-wrap gap-4">
                         <a
-                            href="https://wa.me/6281234567890"
+                            href="https://wa.me/6283193452115"
                             className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-950 hover:bg-neutral-200"
                         >
                             Chat on WhatsApp
                         </a>
                         <a
-                            href="mailto:youremail@example.com"
+                            href="mailto:mfadlieputrap@gmail.com"
                             className="rounded-full border border-neutral-700 px-6 py-3 text-sm text-neutral-200 hover:border-neutral-500"
                         >
                             Send an Email
