@@ -97,6 +97,12 @@ export default function PortfolioHome() {
                         link="/demo/coffee-night"
                     />
 
+                    <WorkCard
+                        title="BersihKilat Laundry — UMKM Service Landing Page"
+                        desc="Service-based UMKM landing page demo focused on WhatsApp conversion, pricing clarity, and customer trust."
+                        link="/demo/laundry-kiloan"
+                    />
+
                     <ExternalWorkCard
                         title="PelamarID — Job Board Startup"
                         desc="An early-stage job board startup built to simplify job discovery in Indonesia. Currently shipping a landing page MVP while core backend features are under development."
