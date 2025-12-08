@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, CheckCircle, Users, Zap, Shield, Star, Globe, TrendingUp, Award, Clock, Sparkles, Play, ChevronRight, BarChart3, Lock, Smartphone } from 'lucide-react';
 
@@ -33,7 +35,7 @@ export default function CompanyLanding() {
   }, []);
 
   useEffect(() => {
-    const animateCount = (target, key, duration = 2000) => {
+    const animateCount = (target: number, key: string, duration = 2000) => {
       const start = 0;
       const increment = target / (duration / 16);
       let current = start;
