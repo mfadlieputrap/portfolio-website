@@ -8,7 +8,7 @@ interface ScheduleItemProps {
     day: string;
     time: string;
     active: boolean;
-    closed: boolean;
+    closed?: boolean;
 }
 
 const fadeUp = {
