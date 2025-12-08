@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Heart, Stethoscope, Activity, Clock, Users, Phone, ChevronRight, Star, Check } from "lucide-react";
 
+interface ScheduleItemProps {
+    day: string;
+    time: string;
+    active: boolean;
+    closed: boolean;
+}
+
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0 },
@@ -482,7 +489,12 @@ export default function ClinicDemo() {
 
 /* ---------- COMPONENTS ---------- */
 
-function ServiceCard({ icon, title, desc, color }: any) {
+function ServiceCard({ icon, title, desc, color }: {
+    icon: React.ReactNode,
+    title: string,
+    desc: string,
+    color: string,
+}) {
     const colorClasses = {
         teal: 'from-teal-500 to-teal-600 hover:shadow-teal-500/30',
         rose: 'from-rose-500 to-rose-600 hover:shadow-rose-500/30',
@@ -511,7 +523,12 @@ function ServiceCard({ icon, title, desc, color }: any) {
     );
 }
 
-function DoctorCard({ name, role, desc, specialties }: any) {
+function DoctorCard({ name, role, desc, specialties }: {
+    name: string,
+    role: string,
+    desc: string,
+    specialties: string[],
+}) {
     return (
         <motion.div
             variants={fadeUp}
@@ -549,7 +566,12 @@ function DoctorCard({ name, role, desc, specialties }: any) {
     );
 }
 
-function TestimonialCard({ name, role, review, rating }: any) {
+function TestimonialCard({ name, role, review, rating }: {
+    name: string,
+    role: string,
+    review: string,
+    rating: number,
+}) {
     return (
         <motion.div
             variants={fadeUp}
@@ -579,7 +601,7 @@ function TestimonialCard({ name, role, review, rating }: any) {
     );
 }
 
-function ScheduleItem({ day, time, active, closed }: any) {
+function ScheduleItem({ day, time, active, closed }: ScheduleItemProps) {
     return (
         <div className={`flex items-center justify-between rounded-2xl p-4 transition ${
             closed 
