@@ -14,7 +14,7 @@ export default function CompanyLanding() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     
