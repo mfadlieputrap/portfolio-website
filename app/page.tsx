@@ -103,6 +103,18 @@ export default function PortfolioHome() {
                         link="/demo/laundry-kiloan"
                     />
 
+                    <WorkCard
+                        title="KlinikSehat Plus — Healthcare Clinic Landing Page"
+                        desc="Modern clinic landing page with appointment booking, doctor profiles, service catalog, and patient testimonials for healthcare trust."
+                        link="/demo/klinik"
+                    />
+
+                    <WorkCard
+                        title="Velocity — Modern Company Profile Landing Page"
+                        desc="Premium company profile with interactive animations, feature showcases, pricing tiers, and team collaboration focus for B2B SaaS."
+                        link="/demo/company-profile"
+                    />
+
                     <ExternalWorkCard
                         title="PelamarID — Job Board Startup"
                         desc="An early-stage job board startup built to simplify job discovery in Indonesia. Currently shipping a landing page MVP while core backend features are under development."
@@ -228,8 +240,8 @@ function ExternalWorkCard({ title, desc, href, note }: any) {
         >
             {note && (
                 <span className="absolute right-4 top-4 rounded-full bg-neutral-800 px-2 py-0.5 text-[10px] text-neutral-300">
-          {note}
-        </span>
+                    {note}
+                </span>
             )}
             <h3 className="text-lg font-semibold">{title}</h3>
             <p className="mt-2 text-sm text-neutral-400">{desc}</p>
