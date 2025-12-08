@@ -7,7 +7,7 @@ import { Heart, Stethoscope, Activity, Clock, Users, Phone, ChevronRight, Star, 
 interface ScheduleItemProps {
     day: string;
     time: string;
-    active: boolean;
+    active?: boolean;
     closed?: boolean;
 }
 
