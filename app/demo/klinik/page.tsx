@@ -1,18 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+// Hapus useState jika tidak terpakai agar tidak warning 'unused variable'
 import { Heart, Stethoscope, Activity, Clock, Users, Phone, ChevronRight, Star, Check } from "lucide-react";
 
+// Perbaikan Interface untuk Props
 interface ScheduleItemProps {
     day: string;
     time: string;
     active?: boolean;
     closed?: boolean;
-}
-
-type ColorClasses = {
-    [key: string]: string;
 }
 
 const fadeUp = {
@@ -31,8 +28,6 @@ const staggerContainer = {
 };
 
 export default function ClinicDemo() {
-    const [activeTab, setActiveTab] = useState(0);
-
     return (
         <main className="min-h-screen bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 text-slate-900">
             {/* NAVBAR */}
@@ -68,7 +63,6 @@ export default function ClinicDemo() {
 
             {/* HERO */}
             <section className="relative mx-auto max-w-7xl px-6 pt-32 pb-24 overflow-hidden">
-                {/* Decorative elements */}
                 <div className="absolute top-20 right-10 h-64 w-64 rounded-full bg-teal-200/30 blur-3xl"></div>
                 <div className="absolute bottom-10 left-10 h-48 w-48 rounded-full bg-cyan-200/30 blur-3xl"></div>
                 
@@ -128,7 +122,6 @@ export default function ClinicDemo() {
                             </a>
                         </motion.div>
 
-                        {/* Stats */}
                         <motion.div
                             variants={staggerContainer}
                             initial="hidden"
@@ -150,7 +143,6 @@ export default function ClinicDemo() {
                         </motion.div>
                     </div>
 
-                    {/* Hero Image Placeholder */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -186,10 +178,7 @@ export default function ClinicDemo() {
             </section>
 
             {/* LAYANAN */}
-            <section
-                id="layanan"
-                className="scroll-mt-24 bg-white/50 backdrop-blur py-20"
-            >
+            <section id="layanan" className="scroll-mt-24 bg-white/50 backdrop-blur py-20">
                 <div className="mx-auto max-w-7xl px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -235,10 +224,7 @@ export default function ClinicDemo() {
             </section>
 
             {/* DOKTER */}
-            <section
-                id="dokter"
-                className="scroll-mt-24 bg-gradient-to-br from-teal-50 to-cyan-50 py-20"
-            >
+            <section id="dokter" className="scroll-mt-24 bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
                 <div className="mx-auto max-w-7xl px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -278,10 +264,7 @@ export default function ClinicDemo() {
             </section>
 
             {/* JADWAL */}
-            <section
-                id="jadwal"
-                className="scroll-mt-24 bg-white/50 backdrop-blur py-20"
-            >
+            <section id="jadwal" className="scroll-mt-24 bg-white/50 backdrop-blur py-20">
                 <div className="mx-auto max-w-7xl px-6">
                     <div className="grid gap-12 lg:grid-cols-2 items-center">
                         <motion.div
@@ -370,10 +353,7 @@ export default function ClinicDemo() {
             </section>
 
             {/* TESTIMONI */}
-            <section
-                id="testimoni"
-                className="scroll-mt-24 bg-gradient-to-br from-teal-50 to-cyan-50 py-20"
-            >
+            <section id="testimoni" className="scroll-mt-24 bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
                 <div className="mx-auto max-w-7xl px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -396,7 +376,7 @@ export default function ClinicDemo() {
                         viewport={{ once: true }}
                         className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
                     >
-                <TestimonialCard 
+                        <TestimonialCard 
                             name="Budi Santoso"
                             role="Pasien Rutin"
                             review="Pelayanannya sangat ramah dan dokternya jelas menjelaskan setiap kondisi kesehatan saya. Sangat puas!"
@@ -451,21 +431,6 @@ export default function ClinicDemo() {
                                 Atau Telepon Langsung
                             </a>
                         </div>
-
-                        <div className="mt-12 flex items-center justify-center gap-8 text-teal-50">
-                            <div className="flex items-center gap-2">
-                                <Check className="h-5 w-5" />
-                                <span className="text-sm">Respon Cepat</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Check className="h-5 w-5" />
-                                <span className="text-sm">Dokter Berpengalaman</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Check className="h-5 w-5" />
-                                <span className="text-sm">Harga Terjangkau</span>
-                            </div>
-                        </div>
                     </motion.div>
                 </div>
             </section>
@@ -497,9 +462,9 @@ function ServiceCard({ icon, title, desc, color }: {
     icon: React.ReactNode,
     title: string,
     desc: string,
-    color: string,
+    color: "teal" | "rose" | "cyan", // Gunakan union type agar lebih aman
 }) {
-    const colorClasses: ColorClasses = {
+    const colorClasses = {
         teal: 'from-teal-500 to-teal-600 hover:shadow-teal-500/30',
         rose: 'from-rose-500 to-rose-600 hover:shadow-rose-500/30',
         cyan: 'from-cyan-500 to-cyan-600 hover:shadow-cyan-500/30'
@@ -516,13 +481,6 @@ function ServiceCard({ icon, title, desc, color }: {
             </div>
             <h3 className="text-xl font-bold text-slate-900">{title}</h3>
             <p className="mt-3 leading-relaxed text-slate-600">{desc}</p>
-            
-            <div className="mt-6 flex items-center text-sm font-semibold text-teal-600 opacity-0 transition group-hover:opacity-100">
-                Pelajari lebih lanjut
-                <ChevronRight className="ml-1 h-4 w-4 transition group-hover:translate-x-1" />
-            </div>
-
-            <div className={`absolute -right-8 -bottom-8 h-32 w-32 rounded-full bg-gradient-to-br ${colorClasses[color]} opacity-0 blur-2xl transition group-hover:opacity-10`}></div>
         </motion.div>
     );
 }
@@ -547,24 +505,15 @@ function DoctorCard({ name, role, desc, specialties }: {
                     Tersedia
                 </div>
             </div>
-
             <h3 className="text-2xl font-bold text-slate-900">{name}</h3>
             <p className="text-teal-600 font-medium">{role}</p>
             <p className="mt-4 leading-relaxed text-slate-600">{desc}</p>
-
             <div className="mt-6 flex flex-wrap gap-2">
-                {specialties.map((spec: string, i: number) => (
+                {specialties.map((spec, i) => (
                     <span key={i} className="rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-700 border border-teal-200">
                         {spec}
                     </span>
                 ))}
-            </div>
-
-            <div className="mt-6 pt-6 border-t border-slate-100">
-                <a href="https://wa.me/6281234567890" className="group flex items-center gap-2 text-sm font-semibold text-teal-600 transition hover:text-teal-700">
-                    Jadwalkan Konsultasi
-                    <ChevronRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                </a>
             </div>
         </motion.div>
     );
@@ -587,9 +536,7 @@ function TestimonialCard({ name, role, review, rating }: {
                     <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
                 ))}
             </div>
-            
             <p className="leading-relaxed text-slate-700 italic">&quot;{review}&quot;</p>
-            
             <div className="mt-6 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 text-white font-bold">
                     {name.charAt(0)}
@@ -599,12 +546,9 @@ function TestimonialCard({ name, role, review, rating }: {
                     <p className="text-sm text-slate-600">{role}</p>
                 </div>
             </div>
-
-            <div className="absolute -right-6 -bottom-6 h-24 w-24 rounded-full bg-teal-500/5"></div>
         </motion.div>
     );
 }
-
 function ScheduleItem({ day, time, active, closed }: ScheduleItemProps) {
     return (
         <div className={`flex items-center justify-between rounded-2xl p-4 transition ${

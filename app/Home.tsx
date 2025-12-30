@@ -190,7 +190,7 @@ export default function PortfolioHome() {
       <section id="contact" className="border-t border-neutral-800 bg-neutral-950 py-20 scroll-mt-20">
         <div className="mx-auto max-w-6xl px-5">
           <h2 className="max-w-xl text-3xl font-semibold">Ready to collaborate?</h2>
-          <p className="mt-3 text-neutral-400">Let's discuss your system architecture or product idea.</p>
+          <p className="mt-3 text-neutral-400">Let&apos;s discuss your system architecture or product idea.</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a href="https://wa.me/6283193452115" className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-neutral-950 hover:bg-neutral-200">
               Chat on WhatsApp
