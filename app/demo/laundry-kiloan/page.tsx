@@ -230,16 +230,16 @@ export default function LaundryDemo() {
 
 /* ---------- COMPONENTS ---------- */
 
-function StoreItem({ label, price }: any) {
+function StoreItem({ label, price }: { label: string; price: string }) {
     return (
         <div className="flex items-center justify-between text-sm">
             <span>{label}</span>
             <span className="font-medium">{price}</span>
         </div>
     );
-}
+} 
 
-function ValueCard({ title, desc }: any) {
+function ValueCard({ title, desc }: { title: string; desc: string }) {
     return (
         <div className="rounded-2xl border border-slate-200 bg-sky-50 p-5">
             <p className="font-semibold text-sky-700">{title}</p>
@@ -253,7 +253,7 @@ function PriceCard({
                        price,
                        desc,
                        highlight,
-                   }: any) {
+                   }: { title: string; price: string; desc: string; highlight?: boolean }) {
     return (
         <div
             className={`rounded-3xl border p-6 ${
@@ -269,7 +269,7 @@ function PriceCard({
     );
 }
 
-function TestimonialCard({ name, role, review }: any) {
+function TestimonialCard({ name, role, review }: { name: string; role: string; review: string }) {
     return (
         <div className="rounded-3xl border border-slate-200 bg-sky-50 p-6">
             <div className="flex items-center justify-between">

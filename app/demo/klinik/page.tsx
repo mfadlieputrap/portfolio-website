@@ -11,6 +11,10 @@ interface ScheduleItemProps {
     closed?: boolean;
 }
 
+type ColorClasses = {
+    [key: string]: string;
+}
+
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0 },
@@ -96,7 +100,7 @@ export default function ClinicDemo() {
                             animate="show"
                             transition={{ delay: 0.1 }}
                             className="mt-6 text-lg leading-relaxed text-slate-600"
-                        >
+                        > 
                             Klinik Sehat Sentosa melayani pemeriksaan dan konsultasi kesehatan umum
                             dengan tenaga medis berpengalaman, suasana nyaman, dan proses
                             pendaftaran yang sederhana.
@@ -392,7 +396,7 @@ export default function ClinicDemo() {
                         viewport={{ once: true }}
                         className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
                     >
-                        <TestimonialCard
+                <TestimonialCard 
                             name="Budi Santoso"
                             role="Pasien Rutin"
                             review="Pelayanannya sangat ramah dan dokternya jelas menjelaskan setiap kondisi kesehatan saya. Sangat puas!"
@@ -495,7 +499,7 @@ function ServiceCard({ icon, title, desc, color }: {
     desc: string,
     color: string,
 }) {
-    const colorClasses = {
+    const colorClasses: ColorClasses = {
         teal: 'from-teal-500 to-teal-600 hover:shadow-teal-500/30',
         rose: 'from-rose-500 to-rose-600 hover:shadow-rose-500/30',
         cyan: 'from-cyan-500 to-cyan-600 hover:shadow-cyan-500/30'
@@ -584,7 +588,7 @@ function TestimonialCard({ name, role, review, rating }: {
                 ))}
             </div>
             
-            <p className="leading-relaxed text-slate-700 italic">"{review}"</p>
+            <p className="leading-relaxed text-slate-700 italic">&quot;{review}&quot;</p>
             
             <div className="mt-6 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 text-white font-bold">

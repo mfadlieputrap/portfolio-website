@@ -485,7 +485,7 @@ export default function CompanyLanding() {
             <h2 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
               Everything you need,
               <span className="block mt-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                nothing you don't
+                nothing you don&apos;t
               </span>
             </h2>
             <p className="text-xl lg:text-2xl text-slate-600 max-w-3xl mx-auto font-light">
@@ -532,7 +532,7 @@ export default function CompanyLanding() {
               </span>
             </h2>
             <p className="text-xl lg:text-2xl text-slate-600 max-w-3xl mx-auto font-light">
-              Start free, upgrade when you're ready. No hidden fees, cancel anytime.
+              Start free, upgrade when you&apos;re ready. No hidden fees, cancel anytime.
             </p>
           </div>
 
@@ -635,7 +635,7 @@ export default function CompanyLanding() {
                 </div>
                 
                 <p className="text-2xl lg:text-4xl text-slate-700 text-center leading-relaxed font-medium">
-                  "{testimonials[activeTestimonial].content}"
+                  &quot;{testimonials[activeTestimonial].content}&quot;
                 </p>
                 
                 <div className="flex flex-col items-center space-y-5">
