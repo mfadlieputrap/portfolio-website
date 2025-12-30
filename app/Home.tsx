@@ -55,7 +55,7 @@ const DATA_PROJECTS = [
     title: "Resilient Order Processing System — Event-Driven Microservices",
     desc: "A high-performance backend architecture using NestJS and Apache Kafka. Implements the Saga Pattern for distributed data consistency and proven to handle 1,000 concurrent users with 0% data loss during service failures.",
     tags: ["NestJS", "Apache Kafka", "Microservices", "PostgreSQL", "Docker"],
-    demoUrl: null, 
+    demoUrl: '', 
     repoUrl: "https://github.com/mfadlieputrap/resilient-order-processing-system",
   },
 ];
