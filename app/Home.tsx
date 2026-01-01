@@ -58,6 +58,13 @@ const DATA_PROJECTS = [
     demoUrl: '', 
     repoUrl: "https://github.com/mfadlieputrap/resilient-order-processing-system",
   },
+  {
+    title: "SyncBoard — Scalable Real-time Collaboration Platform",
+    desc: "A Trello-like Kanban board engineered for high concurrency. Features a distributed WebSocket architecture using Redis Pub/Sub adapter for horizontal scaling, and implements the Lexorank algorithm to ensure O(1) complexity for drag-and-drop persistence.",
+    tags: ["NestJS", "Next.js 15", "Socket.io", "Redis (Valkey)", "Docker"],
+    demoUrl: '',
+    repoUrl: "https://github.com/mfadlieputrap/syncboard-api",
+  },
 ];
 
 // --- DATA: SERVICES ---
